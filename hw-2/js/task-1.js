@@ -11,8 +11,8 @@ buttonTask1Ref.addEventListener('click', () => {
     }
   };
   logItems(['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong']);
-  console.log('***************');
+  console.log('**********');
   alert('Теперь выведем цифровой массив');
   logItems([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]);
-  console.log('***************');
+  console.log('**********');
 });
