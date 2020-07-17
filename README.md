@@ -1,5 +1,7 @@
-# goit-js
+# GoIT - JS modules
 
-# hw-1
+# HW-1
 
-# hw-2
+# HW-2
+
+# HW-3
