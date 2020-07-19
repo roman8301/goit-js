@@ -1,27 +1,25 @@
 'use strict';
 
-const buttonTask6Ref = document.querySelector('#task6');
+alert('ЗАДАНИЕ 6');
 
-buttonTask6Ref.addEventListener('click', () => {
-  let total = 0;
+let total = 0;
 
-  do {
-    let input = prompt('Введите число');
+do {
+  let input = prompt('Введите число');
 
-    if (input === null) {
-      console.log('Отменено пользователем');
-      break;
-    }
+  if (input === null) {
+    console.log('Отменено пользователем');
+    break;
+  }
 
-    input = Number(input);
-    const notANumber = Number.isNaN(input);
+  input = Number(input);
+  const notANumber = Number.isNaN(input);
 
-    if (notANumber) {
-      console.log('Было введено не число');
-      continue;
-    }
-    total += input;
-  } while (true);
+  if (notANumber) {
+    console.log('Было введено не число');
+    continue;
+  }
+  total += input;
+} while (true);
 
-  alert(`Общая сумма чисел равна ${total}`);
-});
+alert(`Общая сумма чисел равна ${total}`);

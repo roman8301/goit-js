@@ -1,16 +1,13 @@
 'use strict';
 
-const buttonTask5Ref = document.querySelector('#task5');
+alert('ЗАДАНИЕ 5');
 
-buttonTask5Ref.addEventListener('click', () => {
-  const checkForSpam = message =>
-    message.toLowerCase().includes('spam') || message.toLowerCase().includes('sale');
+const checkForSpam = message => {
+  const spamWord = message.toLowerCase().includes('spam') || message.toLowerCase().includes('sale');
+  return spamWord;
+};
 
-  console.log(checkForSpam('Latest technology news'));
-  alert('Следующая проверка!');
-  console.log(checkForSpam('JavaScript weekly newsletter'));
-  alert('Следующая проверка!');
-  console.log(checkForSpam('Get best sale offers now!'));
-  alert('Следующая проверка!');
-  console.log(checkForSpam('[SPAM] How to earn fast money?'));
-});
+console.log(checkForSpam('Latest technology news'));
+console.log(checkForSpam('JavaScript weekly newsletter'));
+console.log(checkForSpam('Get best sale offers now!'));
+console.log(checkForSpam('[SPAM] How to earn fast money?'));
