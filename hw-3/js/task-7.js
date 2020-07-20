@@ -3,18 +3,32 @@
 const buttonTask1Ref = document.querySelector('#task1');
 
 buttonTask1Ref.addEventListener('click', () => {
-  'use strict';
+  alert(`ЗАДАНИЕ 4\n Подсчет общей суммы зарплат сотрудников.`);
 
-  alert(`ЗАДАНИЕ 2\n Подсчет количества свойств объекта.`);
-
-  const countProps = obj => {
-    const keys = Object.keys(obj);
-    return keys.length;
+  const countTotalSalary = employees => {
+    const values = Object.values(employees);
+    let totalSalary = 0;
+    for (const value of values) {
+      totalSalary += value;
+    }
+    return totalSalary;
   };
 
-  console.log(countProps({}));
+  console.log(countTotalSalary({}));
 
-  console.log(countProps({ name: 'Mango', age: 2 }));
+  console.log(
+    countTotalSalary({
+      mango: 100,
+      poly: 150,
+      alfred: 80,
+    })
+  );
 
-  console.log(countProps({ mail: 'poly@mail.com', isOnline: true, score: 500 }));
+  console.log(
+    countTotalSalary({
+      kiwi: 200,
+      lux: 50,
+      chelsy: 150,
+    })
+  );
 });
