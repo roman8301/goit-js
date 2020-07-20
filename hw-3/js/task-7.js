@@ -3,21 +3,18 @@
 const buttonTask1Ref = document.querySelector('#task1');
 
 buttonTask1Ref.addEventListener('click', () => {
-  const user = {
-    name: 'Mango',
-    age: 20,
-    hobby: 'html',
-    premium: true,
+  'use strict';
+
+  alert(`ЗАДАНИЕ 2\n Подсчет количества свойств объекта.`);
+
+  const countProps = obj => {
+    const keys = Object.keys(obj);
+    return keys.length;
   };
 
-  user.mood = 'happy';
-  user.hobby = 'skydiving';
-  user.premium = false;
+  console.log(countProps({}));
 
-  const keys = Object.keys(user);
-  for (const key of keys) {
-    Object.keys(user);
-    user[key];
-    console.log(`${key}: ${user[key]}`);
-  }
+  console.log(countProps({ name: 'Mango', age: 2 }));
+
+  console.log(countProps({ mail: 'poly@mail.com', isOnline: true, score: 500 }));
 });
