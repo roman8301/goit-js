@@ -4,7 +4,7 @@ alert(`ЗАДАНИЕ 2\n Подсчет количества свойств о�
 
 const countProps = function (obj) {
   const keys = Object.keys(obj);
-  return keys;
+  return keys.length;
 };
 
 console.log(countProps({}));
