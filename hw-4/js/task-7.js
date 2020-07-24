@@ -3,28 +3,31 @@
 const buttonTask1Ref = document.querySelector('#task1');
 
 buttonTask1Ref.addEventListener('click', () => {
-  alert(`ЗАДАНИЕ 7\n Нахождение общей стоимости продукта из массива объектов.`);
+  alert(`ЗАДАНИЕ 1`);
 
-  const products = [
-    { name: 'Радар', price: 1300, quantity: 4 },
-    { name: 'Сканер', price: 2700, quantity: 3 },
-    { name: 'Дроид', price: 400, quantity: 7 },
-    { name: 'Захват', price: 1200, quantity: 2 },
-  ];
-
-  const calculateTotalPrice = (allProdcuts, productName) => {
-    let totalAmount = 0;
-    for (const product of allProdcuts) {
-      if (product.name === productName) {
-        totalAmount = product.price * product.quantity;
-      }
-    }
-    return totalAmount;
+  const account = {
+    owner: 'Mango',
+    balance: 24000,
+    discount: 0.1,
+    orders: ['order-1', 'order-2', 'order-3'],
+    changeDiscount(value) {
+      this.discount = value;
+    },
+    showOrders() {
+      return this.orders;
+    },
+    addOrder(cost, order) {
+      this.balance -= cost;
+      this.orders.push(order);
+    },
   };
 
-  console.log(calculateTotalPrice(products, 'Радар'));
+  account.changeDiscount(0.15);
+  console.log(account.discount); // 0.15
 
-  console.log(calculateTotalPrice(products, 'Дроид'));
+  console.table(account.showOrders()); // ['order-1', 'order-2', 'order-3']
 
-  console.log(calculateTotalPrice(products, 'Сканер'));
+  account.addOrder(5000, 'order-4');
+  console.log(account.balance); // 19000
+  console.table(account.showOrders()); // ['order-1', 'order-2', 'order-3', 'order-4']
 });
