@@ -1,14 +1,32 @@
 'use strict';
 
-alert(`ЗАДАНИЕ 2\n Подсчет количества свойств объекта.`);
+alert(`ЗАДАНИЕ 2`);
 
-const countProps = function (obj) {
-  const keys = Object.keys(obj);
-  return keys.length;
+const inventory = {
+  items: ['Knife', 'Gas mask'],
+  add(itemName) {
+    console.log(`Adding ${itemName} to inventory`);
+
+    this.items.push(itemName);
+  },
+  remove(itemName) {
+    console.log(`Removing ${itemName} from inventory`);
+
+    this.items = this.items.filter(item => item !== itemName);
+  },
 };
 
-console.log(countProps({}));
+const addItem = inventory.add;
+const removeItem = inventory.remove;
 
-console.log(countProps({ name: 'Mango', age: 2 }));
+const invokeInventoryAction = function (itemName, action) {
+  console.log(`Invoking action on ${itemName}`);
+  const actionFn = action.bind(inventory);
+  actionFn(itemName);
+};
 
-console.log(countProps({ mail: 'poly@mail.com', isOnline: true, score: 500 }));
+invokeInventoryAction('Medkit', addItem);
+console.log(inventory.items);
+
+invokeInventoryAction('Gas mask', removeItem);
+console.log(inventory.items);
