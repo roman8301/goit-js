@@ -15,7 +15,5 @@ user.premium = false;
 
 const keys = Object.keys(user);
 for (const key of keys) {
-  Object.keys(user);
-  user[key];
   console.log(`${key}: ${user[key]}`);
 }

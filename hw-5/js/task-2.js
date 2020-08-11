@@ -1,32 +1,30 @@
 'use strict';
 
-alert(`ЗАДАНИЕ 2`);
+console.group(`ЗАДАНИЕ 2`);
 
-const inventory = {
-  items: ['Knife', 'Gas mask'],
-  add(itemName) {
-    console.log(`Adding ${itemName} to inventory`);
-
-    this.items.push(itemName);
-  },
-  remove(itemName) {
-    console.log(`Removing ${itemName} from inventory`);
-
-    this.items = this.items.filter(item => item !== itemName);
-  },
+const User = function ({ name, age, followers }) {
+  this.name = name;
+  this.age = Number(age);
+  this.followers = Number(followers);
 };
 
-const addItem = inventory.add;
-const removeItem = inventory.remove;
-
-const invokeInventoryAction = function (itemName, action) {
-  console.log(`Invoking action on ${itemName}`);
-  const actionFn = action.bind(inventory);
-  actionFn(itemName);
+User.prototype.getInfo = function () {
+  console.log(`User ${this.name} is ${this.age} years old and has ${this.followers} followers`);
 };
+const mango = new User({
+  name: 'Mango',
+  age: 2,
+  followers: 20,
+});
 
-invokeInventoryAction('Medkit', addItem);
-console.log(inventory.items);
+mango.getInfo(); // User Mango is 2 years old and has 20 followers
 
-invokeInventoryAction('Gas mask', removeItem);
-console.log(inventory.items);
+const poly = new User({
+  name: 'Poly',
+  age: 3,
+  followers: 17,
+});
+
+poly.getInfo(); // User Poly is 3 years old and has 17 followers
+
+console.groupEnd();

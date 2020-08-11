@@ -1,29 +1,28 @@
 'use strict';
 
-alert(`ЗАДАНИЕ 1`);
+console.group(`ЗАДАНИЕ 1`);
 
-const account = {
-  owner: 'Mango',
-  balance: 24000,
-  discount: 0.1,
-  orders: ['order-1', 'order-2', 'order-3'],
-  changeDiscount(value) {
-    this.discount = value;
-  },
-  showOrders() {
-    return this.orders;
-  },
-  addOrder(cost, order) {
-    this.balance -= cost;
-    this.orders.push(order);
-  },
+const Account = function ({ login, email }) {
+  this.login = login;
+  this.email = email;
 };
 
-account.changeDiscount(0.15);
-console.log(account.discount);
+Account.prototype.getInfo = function () {
+  console.log(`Login: ${this.login}, Email: ${this.email}`);
+};
 
-console.table(account.showOrders());
+const mango = new Account({
+  login: 'Mangozedog',
+  email: 'mango@dog.woof',
+});
 
-account.addOrder(5000, 'order-4');
-console.log(account.balance);
-console.table(account.showOrders());
+mango.getInfo(); // Login: Mangozedog, Email: mango@dog.woof
+
+const poly = new Account({
+  login: 'Poly',
+  email: 'poly@mail.com',
+});
+
+poly.getInfo(); // Login: Poly, Email: poly@mail.com
+
+console.groupEnd();
