@@ -11,6 +11,7 @@ const User = function ({ name, age, followers }) {
 User.prototype.getInfo = function () {
   console.log(`User ${this.name} is ${this.age} years old and has ${this.followers} followers`);
 };
+
 const mango = new User({
   name: 'Mango',
   age: 2,
