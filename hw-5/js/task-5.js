@@ -20,11 +20,11 @@ class Car {
   }
 
   set price(newPrice) {
-    return (this._price = newPrice);
+    this._price = newPrice;
   }
 
   turnOn() {
-    return (this.isOn = true);
+    this.isOn = true;
   }
 
   turnOff() {
